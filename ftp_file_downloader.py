@@ -21,13 +21,13 @@ temp_ftp_url = ''
 ftp_url_arr = []
 user_option = 0
 
+
 # fetch ftp data
 def fetch_ftp_data(url):
     # gets all the informations of the url (folders and files)
     # adds data to main_objects each time this function is called
     # return main_objects
     print(url)
-
 
 def download_files():
     # if main_objects.file_length > 0
@@ -38,7 +38,6 @@ def download_files():
     print("download_files")
     fetch_files({'file_name': 'demo', 'file_url': 'ftp://demo_url'}, 'Demo Folder')
     # pass
-
 
 def fetch_files(file, folder):
     # download the file to the location
@@ -64,7 +63,7 @@ def move_to_folder():
 def return_to_previous_folder():
     # change the values of temp_ftp_url = '' ftp_url_arr = [] based on the call
     # move one step back in the folder tree and fetch fetch_ftp_data
-    print(f"Moved one step back:\n The present folder is {main_objects['current_folder']}")
+    print(f"Moved one step back:\nThe present folder is {main_objects['current_folder']}")
 
 
 print("Welcome to FTP File Downloader".center(console_width))
@@ -84,7 +83,7 @@ fetch_ftp_data(root_ftp_url)
 
 # start of while
 while True:
-    print(f"There are {main_objects['folder_length']} folders and {main_objects['file_length']} files in {main_objects['current_folder']}")
+    print(f"There are {main_objects['folder_length']} folders and {main_objects['file_length']} files in {main_objects['current_folder']} folder.")
 
     # if both folder and files length is zero then exit
     if main_objects['folder_length'] == 0 and main_objects['file_length'] == 0 and main_objects['current_folder'] == '_root':
@@ -94,7 +93,7 @@ while True:
         break
 
     # if current_folder not _root and if both folder and files length is zero
-    if main_objects['folder_length'] == 0 and main_objects['file_length'] == 0 and main_objects['current_folder'] == '_root':
+    if main_objects['folder_length'] == 0 and main_objects['file_length'] == 0 and main_objects['current_folder'] != '_root':
         print("+++++++++++++++++++++".center(console_width))
         print("The folder is empty".center(console_width))
         return_to_previous_folder()
