@@ -3,4 +3,4 @@
 Requirement:
 >Software to make ur android device as FTP server
 
-*presently this has just the structure, code functionality will be integrated soon.*
+*presently this has just the structure, core functionality will be integrated soon.*
